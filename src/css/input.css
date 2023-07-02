@@ -30,6 +30,14 @@
   border-radius: 50%;
 }
 
+.text-line {
+  @apply border-b-[2.3px] border-primary-500 w-[70px] rounded-full
+}
+
+.show-back-to-top-btn {
+  @apply opacity-100 -translate-y-0
+}
+
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
@@ -52,5 +60,8 @@
   }
   .nav-link {
     @apply block text-base font-medium px-5 py-3 hover:text-primary-500 hover:bg-aliceblue-100 lg:rounded-lg lg:hover:bg-transparent outline-none focus:outline-none transition-all
+  }
+  .skill-img {
+    @apply max-w-[60px] sm:max-w-[80px] mx-4 py-4 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:-translate-y-2 lg:mx-6 xl:mx-8 transition-all duration-300 ease-in-out
   }
 }

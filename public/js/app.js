@@ -37,6 +37,20 @@ $(document).ready(function () {
     }
   });
 
+  const backToTopBtn = $("#back-to-top-btn");
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      backToTopBtn.addClass("show-back-to-top-btn");
+    } else {
+      backToTopBtn.removeClass("show-back-to-top-btn");
+    }
+  });
+  
+  backToTopBtn.on("click", function () {
+    window.scrollTo({ top: 0 });
+  });
+
   const scriptURL = 'https://formsubmit.co/ajax/farhannsrllh177@gmail.com';
   const form = document.forms['personal-contact-form'];
   const sendBtn = document.querySelector('#contact-form-btn');
