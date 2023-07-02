@@ -4,6 +4,35 @@ $(document).ready(function () {
   });
   $("img").attr("draggable", false).attr("lazyload", true).css("user-select", "none");
 
+  const changeThemeBtn = document.querySelector('#change-theme-btn');
+  const changeThemeBtnLg = document.querySelector('#change-theme-btn-lg');
+  const html = document.querySelector('html');
+
+  changeThemeBtn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  });
+
+  changeThemeBtnLg.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  });
+
+  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.theme;
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+    html.classList.add('dark');
+    localStorage.theme = 'dark';
+    changeThemeBtn.setAttribute('checked', 'checked');
+    changeThemeBtnLg.setAttribute('checked', 'checked');
+  } else {
+    html.classList.remove('dark');
+    localStorage.theme = 'light';
+    changeThemeBtn.removeAttribute('checked');
+    changeThemeBtnLg.removeAttribute('checked');
+  }
+
   const header = $("header");
   const hamburger = $("#hamburger");
   
@@ -63,6 +92,7 @@ $(document).ready(function () {
 
       const name = form.elements['name'].value;
       const email = form.elements['email'].value;
+      const phone = form.elements['phone'].value;
       const message = form.elements['message'].value;
 
       if (name.trim() === '') {
@@ -80,6 +110,11 @@ $(document).ready(function () {
         return;
       }
 
+      if (phone.trim() === '') {
+        showNotification('warning', 'Please enter your phone or whatsapp number.');
+        return;
+      }
+
       if (message.trim() === '') {
         showNotification('warning', 'Please enter your message.');
         return;
@@ -93,12 +128,15 @@ $(document).ready(function () {
           'Accept': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ name: name, email: email, message: message })
+        body: JSON.stringify({ name: name, email: email, phone: phone, message: message })
       })
       .then(function (response) {
         if (response.ok) {
           form.reset();
-          sendBtn.innerHTML = '<svg class="w-6 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Minutemailer</title><path d="M17.187 19.181L24 4.755 0 12.386l9.196 1.963.043 4.896 2.759-2.617-2.147-2.076 7.336 4.63z"/></svg> <span class="ml-2">Send</span>';
+          sendBtn.innerHTML = `<span class="mr-2">Send</span>
+                              <svg class="inline-block transform rotate-45" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                              </svg>`;
           showNotification('success', 'Your message has been sent successfully.');
           sendBtn.blur();
         } else {
@@ -134,7 +172,8 @@ $(document).ready(function () {
       width: 450,
       icon: icon,
       title: title,
-      background: '#f0f8ff',
+      color: localStorage.theme === 'dark' ? '#cbd5e1' : '#1e293b',
+      background: localStorage.theme === 'dark' ? '#1e293b' : '#f0f8ff',
       showConfirmButton: false,
       showCloseButton: true,
       iconColor: iconColor,

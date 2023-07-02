@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/final.css">
   <link rel="shortcut icon" href="#" type="image/x-icon">
   <title>Portfolio TailwindCSS</title>
 </head>
@@ -15,20 +15,35 @@
 <body>
 
   <!-- Header Start -->
-  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[999] transition-all">
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[999] lg:py-1 transition-all">
     <div class="container mx-auto">
       <div class="flex items-center justify-between relative px-4">
           <a href="#home" class="font-bold text-primary-500 text-xl block py-3">
             <img src="public/img/logo.png" alt="Logo" class="h-11" c>
           </a>
         <div class="flex items-center">
-          <button type="button" id="hamburger" name="hamburger" class="block absolute right-4 outline-none lg:hidden">
+          <div class="flex lg:hidden justify-center items-center px-5 py-3 outline-none focus:outline-none transition-all">
+            <svg class="text-primary-500 dark:text-slate-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+              <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+            </svg>
+            <input type="checkbox" id="change-theme-btn" class="hidden">
+            <label for="change-theme-btn" class="inline mx-2">
+              <div class="w-9 h-5 bg-slate-300 dark:dark:bg-slate-700 cursor-pointer rounded-full flex items-center p-0.5">
+                <div class="w-4 h-4 bg-primary-500 rounded-full transition-all" id="dot"></div>
+              </div>
+            </label>
+            <svg class="text-dark dark:text-primary-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+              <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+              <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+            </svg>
+          </div>
+          <button type="button" id="hamburger" name="hamburger" class="block right-4 outline-none lg:hidden">
             <span class="hamburger-line origin-top-left"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line origin-bottom-left"></span>
           </button>
 
-          <nav id="nav-menu" class="hidden lg:block absolute lg:static lg:bg-transparent lg:max-w-full bg-[#f0f8ff] shadow-lg lg:shadow-none rounded-lg lg:rounded-none border lg:border-none max-w-[250px] w-full right-4 overflow-hidden transition-all ease-in-out" style="top: calc(100% + 10px);">
+          <nav id="nav-menu" class="hidden lg:block absolute lg:static lg:bg-transparent lg:dark:bg-transparent lg:max-w-full bg-[#f0f8ff] dark:bg-slate-800 dark:shadow-slate-800 dark:border-none shadow-lg lg:shadow-none rounded-lg lg:rounded-none border lg:border-none max-w-[250px] w-full right-4 overflow-hidden transition-all ease-in-out" style="top: calc(100% + 10px);">
             <ul class="block lg:flex">
               <li class="group w-full h-full">
                 <a href="#home" class="nav-link">Home</a>
@@ -45,6 +60,21 @@
               <li class="group w-full h-full">
                 <a href="#contact" class="nav-link">Contact</a>
               </li>
+              <li class="nav-link hidden lg:flex justify-center items-center">
+                <svg class="text-primary-500 dark:text-slate-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                  <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+                <input type="checkbox" id="change-theme-btn-lg" class="hidden">
+                <label for="change-theme-btn-lg" class="inline mx-2">
+                  <div class="w-9 h-5 bg-slate-300 dark:bg-slate-700 cursor-pointer rounded-full flex items-center p-0.5">
+                    <div class="w-4 h-4 bg-primary-500 rounded-full transition-all" id="dot-lg"></div>
+                  </div>
+                </label>
+                <svg class="text-dark dark:text-primary-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+                  <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                  <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+                </svg>
+              </li>
             </ul>
           </nav>
         </div>
@@ -54,22 +84,27 @@
   <!-- Header End -->
   
   <!-- Hero Secion Start -->
-  <section id="home" class="pt-36">
+  <section id="home" class="pt-36 dark:bg-dark">
     <div class="container mx-auto">
       <div class="flex flex-wrap">
         <div class="w-full self-center px-4 lg:w-1/2">
           <h1 class="text-base font-semibold text-primary-500">Hello There 👋🏻, 
-            I'm <span class="block font-bold text-dark text-4xl mt-1">Farhan Nasrulloh</span></h1>
-          <h2 class="font-medium text-secondary text-lg mb-5">Junior Software Developer</h2>
-          <p class="font-medium text-secondary lg:text-lg mb-10 leading-relaxed">I'm a software developer with an interest in web development and problem solving. Let's create something extraordinary together!</p>
-          <a href="#contact" class="btn-primary px-8">Contact Me</a>
+            I'm <span class="block font-bold text-dark dark:text-slate-300 text-4xl mt-1">Farhan Nasrulloh</span></h1>
+          <h2 class="font-medium text-secondary dark:text-slate-400 text-lg mb-5">Junior Software Developer</h2>
+          <p class="font-medium text-secondary dark:text-slate-400 lg:text-lg mb-10 leading-relaxed">I'm a software developer with an interest in web development and problem solving. Let's create something extraordinary together!</p>
+          <a href="#contact" class="btn-primary">
+            <span class="inline-block mr-1">Contact Me</span>  
+            <svg class="inline-block transform rotate-45" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+              <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+            </svg>
+          </a>
         </div>
         <div class="w-full self-end px-4 lg:w-1/2">
           <div class="relative mt-10">
             <div class="rounded-full overflow-hidden">
-              <img src="public/img/danshi.png" alt="Farha Nasrulloh" class="mx-auto">
+              <img src="public/img/danshi.png" alt="Farha Nasrulloh" class="mx-auto relative z-10">
             </div>
-            <span class="absolute bottom-0 -z-10 left-1/2 -translate-x-1/2">
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2">
               <svg class="w-[300px] h-[300px] md:w-[400px] md:h-[400px]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#06B6D4" d="M56.1,-44.7C69.5,-27.9,74.9,-4.8,67.9,11.3C60.9,27.5,41.5,36.6,23.7,42.7C5.8,48.9,-10.4,52,-29.7,48C-49,43.9,-71.5,32.7,-75.7,16.6C-79.9,0.6,-65.8,-20.3,-50.1,-37.6C-34.4,-54.8,-17.2,-68.5,2.1,-70.1C21.3,-71.8,42.7,-61.4,56.1,-44.7Z" transform="translate(100 100) scale(1.2)" />
               </svg>
@@ -82,18 +117,18 @@
   <!-- Hero Secion End -->
 
   <!-- About Section Start -->
-  <section id="about" class="pt-36 pb-32">
+  <section id="about" class="pt-36 pb-32 dark:bg-dark">
     <div class="container mx-auto">
       <div class="flex flex-col lg:flex-row">
         <div class="w-full px-4 mb-10">
           <h4 class="font-bold uppercase text-primary-500 text-lg mb-3">About Me</h4>
-          <h2 class="font-bold text-dark text-2xl capitalize mb-4 max-w-md">Hi, I'm Muhammad Farhan Nasrulloh.</h2>
-          <p class="font-medium text-base lg:text-lg text-secondary max-w-xl mb-3">I'm looking for an interesting opportunity as a software developer to take on new challenges. With the skills I have, I am ready to contribute in creating innovative solutions and have a positive impact. I have experience in developing web applications using various technologies such as HTML, CSS, PHP, JavaScript, and frameworks such as Laravel. In addition, I also have expertise in database management. I am excited to join a dynamic and creative team to deliver extraordinary technology solutions.</p>
-          <p class="font-medium text-base lg:text-lg text-secondary max-w-xl">Maybe it's not that important but I quite like to read and also like fantasy things full of imagination.</p>
+          <h2 class="font-bold text-dark dark:text-slate-300 text-2xl capitalize mb-4 max-w-md">Hi, I'm Muhammad Farhan Nasrulloh.</h2>
+          <p class="font-medium text-base lg:text-lg text-secondary dark:text-slate-400 max-w-xl mb-3">I'm looking for an interesting opportunity as a software developer to take on new challenges. With the skills I have, I am ready to contribute in creating innovative solutions and have a positive impact. I have experience in developing web applications using various technologies such as HTML, CSS, PHP, JavaScript, and frameworks such as Laravel. In addition, I also have expertise in database management. I am excited to join a dynamic and creative team to deliver extraordinary technology solutions.</p>
+          <p class="font-medium text-base lg:text-lg text-secondary dark:text-slate-400 max-w-xl">Maybe it's not that important but I quite like to read and also like fantasy things full of imagination.</p>
         </div>
         <div class="w-full px-4 lg:pt-10" id="contact-me">
-          <h3 class="font-bold text-dark text-2xl mb-4 capitalize">let's be friends</h3>
-          <p class="font-medium text-base lg:text-lg text-secondary mb-6">Are you looking for a friendly and reliable partner in your software development journey? Look no further! Let's collaborate and create something extraordinary together!</p>
+          <h3 class="font-bold text-dark dark:text-slate-300 text-2xl mb-4 capitalize">let's be friends</h3>
+          <p class="font-medium text-base lg:text-lg text-secondary dark:text-slate-400 mb-6">Are you looking for a friendly and reliable partner in your software development journey? Look no further! Let's collaborate and create something extraordinary together!</p>
           <div class="flex items-center">
             <!-- Github -->
             <a href="https://github.com/MuhammadFarhan200" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border text-slate-500 border-slate-500 hover:border-primary-500 hover:bg-primary-500 hover:text-white transition-all">
@@ -123,13 +158,13 @@
   <!-- About Section End -->
 
    <!-- Skills Section Start -->
-  <section id="skills" class="pt-36 pb-32 bg-slate-800">
+  <section id="skills" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
     <div class="container mx-auto">
       <div class="w-full px-4">
         <div class="max-w-xl mx-auto text-center mb-16">
           <h4 class="text-lg text-primary-500 font-bold mb-2 uppercase">Skills</h4>
-          <h2 class="text-3xl text-slate-300 font-bold mb-4">Here are some skills that I have</h2>
-          <p class="text-lg font-medium text-slate-300 mt-4">I have mastered several programming languages ​​and several frameworks such as:</p>
+          <h2 class="text-3xl text-slate-300 dark:text-dark font-bold mb-4">Here are some skills that I have</h2>
+          <p class="text-lg font-medium text-slate-300 dark:text-dark mt-4">I have mastered several programming languages ​​and several frameworks such as:</p>
         </div>
       </div>
       <div class="w-full px-4">
@@ -165,43 +200,59 @@
   <!-- Skills Section End -->
 
   <!-- Portfolio Start -->
-  <section id="portfolio" class="pt-36 pb-16 bg-aliceblue-100">
+  <section id="portfolio" class="pt-36 pb-16 bg-aliceblue-100 dark:bg-slate-800">
     <div class="container mx-auto">
       <div class="w-full px-4">
         <div class="max-w-xl mx-auto text-center mb-16">
           <h4 class="text-lg text-primary-500 font-bold mb-2 uppercase">Portfolio</h4>
-          <h2 class="text-3xl text-dark font-bold mb-4">My Projects</h2>
-          <p class="text-lg font-medium text-secondary mt-4">These are some of the projects I've worked on.</p>
+          <h2 class="text-3xl text-dark dark:text-slate-300 font-bold mb-4">My Projects</h2>
+          <p class="text-lg font-medium text-secondary dark:text-slate-400 mt-4">These are some of the projects I've worked on.</p>
         </div>
 
         <div class="w-full flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-lg shadow-lg overflow-hidden">
-              <img src="public/img/portfolio/vokasi-2.png" alt="Freelance Project - Vokasi" class="w-full h-[200px] lg:h-[320px] object-cover object-top">
+              <a href="https://github.com/MuhammadFarhan200/vokasi" target="_blank">
+                <img src="public/img/portfolio/vokasi-2.png" alt="Freelance Project - Vokasi" class="w-full h-[200px] lg:h-[320px] object-cover object-top" />
+              </a>
             </div>
-            <h3 class="font-bold text-xl text-dark mt-5 mb-3">Vokasi</h3>
-            <p class="font-medium text-base text-secondary">Freelance Project - Website Content Management System (CMS) Vocational School Institute of Technology Del. Built Using Laravel, SwupJS and MySQL Database, 2023.</p>
+            <h3 class="font-bold text-xl text-dark dark:text-slate-300 mt-5 mb-3">
+              <a href="https://github.com/MuhammadFarhan200/vokasi" target="_blank" class="hover:text-primary-500 transition-all">Vokasi</a>
+            </h3>
+            <p class="font-medium text-base text-secondary dark:text-slate-400">Freelance Project - Website Content Management System (CMS) Vocational School Institute of Technology Del. Built Using Laravel, SwupJS and MySQL Database, 2023.</p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-lg shadow-lg overflow-hidden">
-              <img src="public/img/portfolio/sistempakar.png" alt="Freelance Project - Sistempakar" class="w-full h-[200px] lg:h-[320px] object-cover object-top">
+              <a href="https://github.com/MuhammadFarhan200/sistempakar" target="_blank">
+                <img src="public/img/portfolio/sistempakar.png" alt="Freelance Project - Sistempakar" class="w-full h-[200px] lg:h-[320px] object-cover object-top">
+              </a>
             </div>
-            <h3 class="font-bold text-xl text-dark mt-5 mb-3">Sistempakar</h3>
-            <p class="font-medium text-base text-secondary">Freelance Project - Expert System (Diagnosis System): Handles Logic and Calculations in the Backend Section. Built Using CodeIgniter and MySQL Database, 2023.</p>
+            <h3 class="font-bold text-xl text-dark dark:text-slate-300 mt-5 mb-3">
+              <a href="https://github.com/MuhammadFarhan200/sistempakar" target="_blank" class="hover:text-primary-500 transition-all">Sistempakar</a>
+            </h3>
+            <p class="font-medium text-base text-secondary dark:text-slate-400">Freelance Project - Expert System (Diagnosis System): Handles Logic and Calculations in the Backend Section. Built Using CodeIgniter and MySQL Database, 2023.</p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-lg shadow-lg overflow-hidden">
-              <img src="public/img/portfolio/pos_web.png" alt="Freelance Project - POS WEB" class="w-full h-[200px] lg:h-[320px] object-cover object-top">
+              <a href="https://github.com/MuhammadFarhan200/POS_WEB" target="_blank">
+                <img src="public/img/portfolio/pos_web.png" alt="Freelance Project - POS WEB" class="w-full h-[200px] lg:h-[320px] object-cover object-top">
+              </a>
             </div>
-            <h3 class="font-bold text-xl text-dark mt-5 mb-3">POS WEB</h3>
-            <p class="font-medium text-base text-secondary">Freelance Project - POS/Point Of Sale System (Web Completion). Built Using Laravel and MySQL Database, 2023.</p>
+            <h3 class="font-bold text-xl text-dark dark:text-slate-300 mt-5 mb-3">
+              <a href="https://github.com/MuhammadFarhan200/POS_WEB" target="_blank" class="hover:text-primary-500 transition-all">POS WEB</a>
+            </h3>
+            <p class="font-medium text-base text-secondary dark:text-slate-400">Freelance Project - POS/Point Of Sale System (Web Completion). Built Using Laravel and MySQL Database, 2023.</p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-lg shadow-lg overflow-hidden">
-              <img src="public/img/portfolio/movies-guide-web.png" alt="Movies Information Web - System Information" class="w-full h-[200px] lg:h-[320px] object-cover object-top">
+              <a href="https://github.com/MuhammadFarhan200/movie-apps-web" target="_blank">
+                <img src="public/img/portfolio/movies-guide-web.png" alt="Movies Information Web - System Information" class="w-full h-[200px] lg:h-[320px] object-cover object-top">
+              </a>
             </div>
-            <h3 class="font-bold text-xl text-dark mt-5 mb-3">Movies Information Web</h3>
-            <p class="font-medium text-base text-secondary">Movie Information System. Built with Laravel, JavaScript and MySQL technology stack, 2022.</p>
+            <h3 class="font-bold text-xl text-dark dark:text-slate-300 mt-5 mb-3">
+              <a href="https://github.com/MuhammadFarhan200/movie-apps-web" target="_blank" class="hover:text-primary-500 transition-all">Movies Information Web</a>
+            </h3>
+            <p class="font-medium text-base text-secondary dark:text-slate-400">Movie Information System. Built with Laravel, JavaScript and MySQL technology stack, 2022.</p>
           </div>
         </div>
       </div>
@@ -210,7 +261,7 @@
   <!-- Portfolio End -->
 
   <!-- Contact Section Start -->
-  <section id="contact" class="pt-36 pb-32">
+  <section id="contact" class="pt-36 pb-32 dark:bg-slate-300">
     <div class="container mx-auto">
       <div class="w-full px-4">
         <div class="max-w-xl mx-auto text-center mb-16">
@@ -221,20 +272,28 @@
       </div>
       <form name="personal-contact-form" class="lg:max-w-3xl mx-auto">
         <div class="w-full px-4 mb-8">
-          <label for="name" class="text-base text-primary-500 font-bold uppercase block mb-1">Name</label>
-          <input type="text" id="name" class="w-full bg-aliceblue-100 outline-none text-dark px-4 py-3 rounded-sm focus:ring-2 focus:ring-primary-500" autocomplete="on">
+          <label for="name" class="text-base text-slate-700 font-bold uppercase block mb-1">Name</label>
+          <input type="text" id="name" class="w-full font-medium bg-slate-200 dark:bg-aliceblue-300 outline-none text-dark px-4 py-3 rounded-md focus:ring-[2px] focus:ring-primary-500" autocomplete="on">
+        </div>
+        <div class="flex flex-col md:flex-row">
+          <div class="w-full px-4 mb-8">
+            <label for="email" class="text-base text-slate-700 font-bold uppercase block mb-1">Email</label>
+            <input type="text" id="email" class="w-full font-medium bg-slate-200 dark:bg-aliceblue-300 outline-none text-dark px-4 py-3 rounded-md focus:ring-[2px] focus:ring-primary-500" autocomplete="on">
+          </div>
+          <div class="w-full px-4 mb-8">
+            <label for="phone" class="text-base text-slate-700 font-bold uppercase block mb-1">Phone/WhatsApp Number</label>
+            <input type="tel" id="phone" class="w-full font-medium bg-slate-200 dark:bg-aliceblue-300 outline-none text-dark px-4 py-3 rounded-md focus:ring-[2px] focus:ring-primary-500" autocomplete="on">
+          </div>
         </div>
         <div class="w-full px-4 mb-8">
-          <label for="email" class="text-base text-primary-500 font-bold uppercase block mb-1">Email</label>
-          <input type="text" id="email" class="w-full bg-aliceblue-100 outline-none text-dark px-4 py-3 rounded-sm focus:ring-2 focus:ring-primary-500" autocomplete="on">
-        </div>
-        <div class="w-full px-4 mb-8">
-          <label for="message" class="text-base text-primary-500 font-bold uppercase block mb-1">Message</label>
-          <textarea name="messsage" id="message" rows="6" class="w-full bg-aliceblue-100 outline-none text-dark px-4 py-3 rounded-sm focus:ring-2 focus:ring-primary-500" autocomplete="on"></textarea>
+          <label for="message" class="text-base text-slate-700 font-bold uppercase block mb-1">Message</label>
+          <textarea name="messsage" id="message" class="w-full min-h-[150px] font-medium bg-slate-200 dark:bg-aliceblue-300 outline-none text-dark px-4 py-3 rounded-md focus:ring-[2px] focus:ring-primary-500" autocomplete="on"></textarea>
         </div>
         <button type="submit" id="contact-form-btn" class="btn-primary pe-6 ms-auto flex items-center mx-4">
-          <svg class="w-6 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Minutemailer</title><path d="M17.187 19.181L24 4.755 0 12.386l9.196 1.963.043 4.896 2.759-2.617-2.147-2.076 7.336 4.63z"/></svg>  
-          <span class="ml-2">Send</span>
+          <span class="mr-2">Send</span>
+          <svg class="inline-block transform rotate-45" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+          </svg>
         </button>
       </form>
     </div>
@@ -245,7 +304,7 @@
   <footer class="bg-dark pt-24 pb-12">
     <div class="container mx-auto">
       <div class="flex flex-wrap">
-        <div class="w-full flex items-center px-4 mb-12 text-slate-300 font-medium md:w-1/3 space-x-3">
+        <div class="w-full flex items-center md:items-start px-4 mb-12 text-slate-300 font-medium md:w-1/3 space-x-3">
           <img src="public/img/logo.png" alt="Logo" class="h-14">
           <div class="">
             <h2 class="font-bold text-2xl md:text-3xl text-white mb-1">Farhan Nasrulloh</h2>
@@ -314,7 +373,7 @@
   <!-- Footer End -->
 
   <!-- Back to Tap -->
-  <button id="back-to-top-btn" class="w-10 h-10 fixed bottom-7 translate-y-10 right-6 opacity-0 z-[999] rounded-md bg-primary-500 text-white flex justify-center items-center shadow-lg hover:bg-primary-600 transition-all duration-300 ease-in-out">
+  <button id="back-to-top-btn" class="w-10 h-10 fixed bottom-7 translate-y-10 right-6 opacity-0 z-[999] rounded-md bg-primary-500 text-white flex justify-center items-center shadow-lg hover:bg-primary-500 transition-all duration-300 ease-in-out">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
       <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
     </svg>   
