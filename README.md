@@ -14,7 +14,7 @@ Before running this project, make sure you have installed:
 
 ## Installation & Configuration
 
-- Clone this repository by running the command:
+- Download this repository or you can clone this repository by running command
 
 ```bash
 $ git clone https://github.com/MuhammadFarhan200/portfolio-tailwindcss.git
