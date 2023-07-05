@@ -9,8 +9,8 @@ This project is an example of the implementation and implementation results of l
 
 Before running this project, make sure you have installed:
 
-- [Node.js](https://nodejs.org)
-- [npm](https://www.npmjs.com)
+- <a href="https://nodejs.org" target="_blank">Node.js</a>
+- <a href="https://www.npmjs.com" target="_blank">npm</a>
 
 ## Installation & Configuration
 
@@ -47,4 +47,4 @@ $ npm run dev
 If you have any questions or want to get in touch, please contact me via:
 
 - Email: [farhannsrllh177@gmail.com](mailto:farhannsrllh177@gmail.com)
-- Twitter: [@FarhanNsrl](https://twitter.com/FarhanNsrl)
+- Twitter: <a href="https://twitter.com/FarhanNsrl/" target="_blank">@FarhanNsrl</a>
