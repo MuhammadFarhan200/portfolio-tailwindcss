@@ -3,7 +3,7 @@
 
 ## Description
 
-This project is an example of the implementation and implementation results of learning Tailwind CSS. This project harnesses the power of Tailwind CSS to create a responsive and modern interface.
+This project is an example of the implementation and implementation results of learning Tailwind CSS in the Web Programming Unpas tutorial. This project harnesses the power of Tailwind CSS to create a responsive and modern interface.
 
 ## Precondition
 
