@@ -3,7 +3,7 @@
 
 ## Description
 
-This project is an example of implementing Tailwind CSS in a simple portfolio website project. This project harnesses the power of Tailwind CSS to build responsive and modern interfaces.
+This project is an example of the implementation and implementation results of learning Tailwind CSS. This project harnesses the power of Tailwind CSS to create a responsive and modern interface.
 
 ## Precondition
 
