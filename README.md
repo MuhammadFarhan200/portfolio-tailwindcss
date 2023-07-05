@@ -10,34 +10,37 @@ This project is an example of the implementation and implementation results of l
 Before running this project, make sure you have installed:
 
 - [Node.js](https://nodejs.org)
-- [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com)
+- [npm](https://www.npmjs.com)
 
-## Installation
+## Installation & Configuration
 
-1. Clone this repository:
+- Clone this repository by running the command:
 
 ```bash
 $ git clone https://github.com/MuhammadFarhan200/portfolio-tailwindcss.git
+```
 
+- Go to repository folder by running the command:
+
+```bash
 $ cd portfolio-tailwindcss
 ```
 
-2. Install dependencies with npm or Yarn:
+- Install dependencies with npm:
 
 ```bash
 $ npm install
-# Or
-$ yarn install
 ```
-## Running Projects
 
-To run this project, run the following command:
+Because this project is made with only html and tailwindcss, there are 2 stages to run this project.
+
+- To run Tailwind CSS, run the following command:
 
 ```bash
 $ npm run dev
-# Or
-$ yarn run dev
 ```
+
+- To run the project, open the `index.html` file in a browser or you can run it on a live server using extensions from Visual Studio code or other code editors.
 
 ## Contact Me
 
