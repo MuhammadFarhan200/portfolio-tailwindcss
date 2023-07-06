@@ -34,13 +34,13 @@ $ npm install
 
 Because this project is made with only html and tailwindcss, there are 2 stages to run this project.
 
-- To run Tailwind CSS, run the following command:
+- First, to run Tailwind CSS, run the following command:
 
 ```bash
 $ npm run dev
 ```
 
-- To run the project, open the `index.html` file in a browser or you can run it on a live server using extensions from Visual Studio code or other code editors.
+- Then secondly, to run the project, open the `index.html` file in a browser or you can run it on a live server using extensions from Visual Studio code or any other code editor.
 
 ## Contact Me
 
