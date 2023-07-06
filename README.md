@@ -40,7 +40,7 @@ Because this project is made with only html and tailwindcss, there are 2 stages 
 $ npm run dev
 ```
 
-- Then secondly, to run the project, open the `index.html` file in a browser or you can run it on a live server using extensions from Visual Studio code or any other code editor.
+- Then the second, to run the project, open the `index.html` file in the browser or you can run it using the extension from [Visual Studio code](https://code.visualstudio.com), namely using the [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
 
 ## Contact Me
 
